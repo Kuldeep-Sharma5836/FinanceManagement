@@ -1,3 +1,7 @@
+
+finance-management-eosin.vercel.app  :- link of live project
+
+
 # Finance Management
 
 A simple application to help you manage your personal finances, track expenses, and analyze your spending habits.
