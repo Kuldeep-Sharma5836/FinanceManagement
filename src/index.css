@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple Light Green and White Color Palette */
+@layer base {
+  :root {
+    /* Primary Colors - Light Green Theme (Dark Mode) */
+    --background: 120 14% 8%; /* #0f120f - Very dark green */
+    --foreground: 120 9% 98%; /* #fafbfa - Light green-gray */
+    
+    /* Primary - Light Green */
+    --primary: 142 76% 36%; /* #16a34a - Green */
+    --primary-foreground: 120 9% 98%;
+    
+    /* Secondary - Mint Green */
+    --secondary: 160 84% 39%; /* #10b981 - Emerald green */
+    --secondary-foreground: 120 14% 8%;
+    
+    /* Card Colors */
+    --card: 120 14% 10%; /* #1a1d1a - Slightly lighter dark green */
+    --card-foreground: 120 9% 98%;
+    
+    /* Popover */
+    --popover: 120 14% 10%;
+    --popover-foreground: 120 9% 98%;
+    
+    /* Muted Colors */
+    --muted: 120 14% 12%; /* #2a2d2a - Dark green gray */
+    --muted-foreground: 120 9% 65%; /* #a1a5a1 - Medium green-gray */
+    
+    /* Accent - Mint Green */
+    --accent: 160 84% 39%; /* #10b981 - Emerald green */
+    --accent-foreground: 120 14% 8%;
+    
+    /* Destructive - Red */
+    --destructive: 0 84% 60%; /* #ef4444 - Red */
+    --destructive-foreground: 120 9% 98%;
+    
+    /* Border and Input */
+    --border: 120 14% 16%; /* #3a3d3a - Medium dark green */
+    --input: 120 14% 16%;
+    --ring: 142 76% 36%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    
+    /* Sidebar Colors */
+    --sidebar-background: 120 14% 6%; /* #0a0d0a - Darker green */
+    --sidebar-foreground: 120 9% 98%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 120 9% 98%;
+    --sidebar-accent: 160 84% 39%;
+    --sidebar-accent-foreground: 120 14% 8%;
+    --sidebar-border: 120 14% 12%;
+    --sidebar-ring: 142 76% 36%;
+    
+    /* Gradient Colors */
+    --gradient-primary: 142 76% 36%; /* Green */
+    --gradient-secondary: 160 84% 39%; /* Emerald */
+    --gradient-accent: 120 14% 10%; /* Dark green */
+    
+    /* Success and Warning Colors */
+    --success: 142 76% 36%; /* #16a34a - Green */
+    --success-foreground: 120 9% 98%;
+    --warning: 38 92% 50%; /* #f59e0b - Amber */
+    --warning-foreground: 120 14% 8%;
+  }
+  
+  .light {
+    /* Light Theme - Clean White with Green Accents */
+    --background: 0 0% 100%; /* #ffffff - Pure white */
+    --foreground: 120 14% 8%; /* #0f120f - Dark green */
+    
+    /* Primary - Green */
+    --primary: 142 76% 36%; /* #16a34a - Green */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Mint Green */
+    --secondary: 160 84% 39%; /* #10b981 - Emerald green */
+    --secondary-foreground: 120 14% 8%;
+    
+    /* Card Colors */
+    --card: 0 0% 100%; /* #ffffff - White */
+    --card-foreground: 120 14% 8%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 14% 8%;
+    
+    /* Muted Colors */
+    --muted: 120 9% 96%; /* #f5f6f5 - Light green-gray */
+    --muted-foreground: 120 9% 45%; /* #6b6f6b - Dark green-gray */
+    
+    /* Accent - Mint Green */
+    --accent: 160 84% 39%; /* #10b981 - Emerald green */
+    --accent-foreground: 120 14% 8%;
+    
+    /* Destructive - Red */
+    --destructive: 0 84% 60%; /* #ef4444 - Red */
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border and Input */
+    --border: 120 9% 91%; /* #e8e9e8 - Light green-gray */
+    --input: 120 9% 91%;
+    --ring: 142 76% 36%;
+    
+    /* Sidebar Colors */
+    --sidebar-background: 120 14% 8%; /* #0f120f - Dark green */
+    --sidebar-foreground: 120 9% 98%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 120 9% 98%;
+    --sidebar-accent: 160 84% 39%;
+    --sidebar-accent-foreground: 120 14% 8%;
+    --sidebar-border: 120 14% 12%;
+    --sidebar-ring: 142 76% 36%;
+    
+    /* Gradient Colors */
+    --gradient-primary: 142 76% 36%; /* Green */
+    --gradient-secondary: 160 84% 39%; /* Emerald */
+    --gradient-accent: 120 9% 96%; /* Light green-gray */
+    
+    /* Success and Warning Colors */
+    --success: 142 76% 36%; /* #16a34a - Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%; /* #f59e0b - Amber */
+    --warning-foreground: 120 14% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    background: hsl(var(--background));
+    position: relative;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-primary)) 0%, hsl(var(--gradient-secondary)) 100%);
+  }
+  
+  .bg-gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)/0.95) 100%);
+    backdrop-filter: blur(10px);
+  }
+  
+  .bg-gradient-sidebar {
+    background: linear-gradient(180deg, hsl(var(--sidebar-background)) 0%, hsl(var(--sidebar-background)/0.95) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--gradient-primary)) 0%, hsl(var(--gradient-secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-green {
+    background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-mint {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(22, 163, 74, 0.15);
+  }
+  
+  .shadow-glow-mint {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(var(--foreground)) !important;
+  font-weight: 600;
+}
+
+/* Card styling */
+.card, .popover, .bg-card, .bg-gradient-card, .card * {
+  color: hsl(var(--card-foreground)) !important;
+}
+
+/* Links */
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: hsl(var(--primary)/0.8);
+  text-decoration: underline;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary)/0.8);
+}
